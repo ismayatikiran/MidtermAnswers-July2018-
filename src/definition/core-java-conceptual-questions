@@ -1,17 +1,44 @@
 Please answer the below core-java Questions:
 
 What is programing language?
-A.
+A.Java is a general-pursose conputer-programming language that is consurrent, class-based, object-oriented, and specifically
+desined to have as few implementation dependencies as possible
+
 What jdk contains or composed of and define each components?
+A.JDK means Java developement Kit and it does contains jar files.
+And it's components are :-
+i)  the Runtime interpreter.
+ii) the Complier
+iii)the Applet viwer
+iv) the Debugger
+v)  the Class File Disasssembler
+vi) the Header and Stub File Generator
+vii)the Documentation Generator
+viii)Applet Demos
+ix) API Source Code
+
 What is IDE?
+A.IDE stands for Integrated Developement Environment.
+It is a sosftware applicaton which enables users to more easily write nd debug java programs.
+
 What are the IDEs available in the market to support java?
-Explain the entire java life cycle.
+A.Eclipse, Intellij,Netbeans .
+
+
+A.
 what is class?
+A. A class is a blue print of an object.
 What is object?
+A. An object is a instance of a class.
 What is the entry point of an application?
+A. The main method is the entry point of an java application.
 Why main is static?
+A. This is neccessary because main() is callecd by the JVM before any objects are
+made.Since it is static it can be directly invoke via the class.
 Which class is the superclass of all classes?
+A.
 What is difference between path and classpath variables?
+A.The class from which it is derived is called superclass.
 What is the difference between an Interface and Abstract class?
 Can you make an Object from an Interface and Abstract class ? if not how do you use it ?
 what is Access Specifier?
