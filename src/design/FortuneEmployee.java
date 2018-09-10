@@ -14,8 +14,22 @@ public class FortuneEmployee {
 	 *
 	 **/
 	public static void main(String[] args) {
-		
+		EmployeeInfo EMP1 = new EmployeeInfo("Master Mafi",201);
+		EmployeeInfo EMP2 = new EmployeeInfo("Juniour Jahid",202);
+		EmployeeInfo EMP3 = new EmployeeInfo("Shrif Syed",203);
 
+
+		EMP1.assignDepartment("QA tester");
+		EMP2.assignDepartment("Developer");
+		EMP3.assignDepartment("VP");
+
+		EMP1.calculateSalary(10000);
+		EMP2.calculateSalary(20000);
+		EMP3.calculateSalary(30000);
+
+
+		EMP1.setPerformance(4);
+		double bonous1 = (EMP1.calculateEmployeeBonus(EMP1.getPerformane());
 
 	}
 

@@ -1,5 +1,12 @@
 package datastructure;
 
+import databases.ConnectToMongoDB;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.LinkedList;
+
 public class DataReader {
 
 	public static void main(String[] args) {
@@ -19,7 +26,33 @@ public class DataReader {
 		 */
 
 		String textFile = System.getProperty("user.dir") + "/src/data/self-driving-car.txt";
+		FileReader file = null;
+		BufferedReader buffer = null;
+		BufferedReader buffer1 = null;
 
+		ConnectToMongoDB db = new ConnectToMongoDB();
+
+		try {
+			file = new FileReader(textFile);
+		}catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+		br = new BufferedReader(file);
+
+		String text, text1 ;
+		Stack stack = new Stack();
+		LinkedList<String>linkedList = new LinkedList<>();
+		int count = 0;
+
+		try {
+			while ((text = br.readLine()) != null) {
+
+
+			}
+
+
+		}
 
 
 	}

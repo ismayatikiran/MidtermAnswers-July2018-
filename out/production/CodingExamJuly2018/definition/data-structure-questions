@@ -1,13 +1,39 @@
 Please answer the below Data Structure Questions:
 
 why do we need data structure?
-A.
+A.Data Structure in Java is needed so that storing and organizing data can be done.
+
 What are the various operations that can be performed on different Data Structures?
+A. The following can be performed on different Data Structures:
+ - Traversing
+ - Serching
+ - Inserting
+ - Deleting
+ - Sorting
+ - Merging
+
 List out the areas in which data structures are applied extensively?
+A. The list are: -
+- Compiler Design
+- Operating System
+- Database Managaement System
+- Statistical Analysis Packagae
+- numerical Analysis
+- Graphics
+- Simulation
+- Artifical Intelligence
+
 what is an Array?
+A.An Array is a container object that holds a fixed number of values of a single type.
+
 what is the difference between the Array and ArrayList?
+A. The difference betweeen them are:
+Array is a  fixed length data structure; you can
+
 what is LinkedList?
+
 How is an Array different from Linked List?
+A. Yes
 what is queue?
 what is stack?
 what is FIFO and LIFO?
