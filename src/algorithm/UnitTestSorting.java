@@ -13,9 +13,10 @@ public class UnitTestSorting {
 
         //Create Sort object
         Sort sort = new Sort();
-        sort.
+
+        //sort.
         //apply unsorted array to selectionSort.
-        sort.selectionSort(unSortedArray);
+       // sort.selectionSort(unSortedArray);
         //verify if the unsorted array is sorted by the selection sort algorithm.
         try {
             Assert.assertEquals(sortedArray, unSortedArray, "Array is not Sorted");

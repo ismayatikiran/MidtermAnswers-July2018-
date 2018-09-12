@@ -1,6 +1,6 @@
-package design;
+//package design;
 
-public class FortuneEmployee {
+//public class FortuneEmployee {
 
 	/**
 	 * FortuneEmployee class has a main methods where you will be able to create Object from
@@ -13,7 +13,7 @@ public class FortuneEmployee {
 	 * Use any databases[MongoDB, Oracle, MySql] to store data and retrieve data.
 	 *
 	 **/
-	public static void main(String[] args) {
+/*	public static void main(String[] args) {
 		EmployeeInfo EMP1 = new EmployeeInfo("Master Mafi",201);
 		EmployeeInfo EMP2 = new EmployeeInfo("Juniour Jahid",202);
 		EmployeeInfo EMP3 = new EmployeeInfo("Shrif Syed",203);
