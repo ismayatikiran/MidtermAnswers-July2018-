@@ -1,5 +1,11 @@
 package math.problems;
 
+import databases.ConnectToMongoDB;
+import databases.ConnectToSqlDB;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Pattern {
 
 	public static void main(String[] args) {
@@ -8,8 +14,29 @@ public class Pattern {
 		 *
 		 *
 		 */
-		
+		int count = 1, j = 0;
+		int num = 100;
+		ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
+		List<String> storePattern = new ArrayList<String>();
+		int[] array1 = new int[40];
 
+		while (num > 0) {
 
+			for (int i = 0; i < 10; i++) {
+				System.out.println(" " + num);
+				array1[j] = num;
+				num -= count;
+				j++;
+			}
+			count++;
+
+		}
+		System.out.println(" ");
+		connectToSqlDB.insertDataFromArrayToSqlTable(array1, "tbl_pattern", "column_pattern");
+		storePattern = connectToSqlDB.readDataBase("tbl_pattern", "column_pattern");
+		System.out.println("Data is reading from the Table (tbl_pattern) and displaying to the console");
+		for (String sp : storePattern) {
+			System.out.print(" " + sp);
+		}
 	}
 }
