@@ -13,10 +13,10 @@
 	 * Use any databases[MongoDB, Oracle, MySql] to store data and retrieve data.
 	 *
 	 **/
-/*	public static void main(String[] args) {
-		EmployeeInfo EMP1 = new EmployeeInfo("Master Mafi",201);
-		EmployeeInfo EMP2 = new EmployeeInfo("Juniour Jahid",202);
-		EmployeeInfo EMP3 = new EmployeeInfo("Shrif Syed",203);
+	public static void main(String[] args) {
+		EmployeeInfo EMP1 = new EmployeeInfo("Mina Hossain",201);
+		EmployeeInfo EMP2 = new EmployeeInfo("Jahid Islam",202);
+		EmployeeInfo EMP3 = new EmployeeInfo("Syed Ali",203);
 
 
 		EMP1.assignDepartment("QA tester");
