@@ -22,160 +22,134 @@ public class Numbers {
 
 	public static void main(String[] args) throws Exception {
 
-		int[] num = new int[1000000];
+		int [] num = new int[1000000];
+
 		storeRandomNumbers(num);
 		ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
 
 		//Selection Sort
 		Sort algo = new Sort();
 		algo.selectionSort(num);
+
+		//selection Sort
 		long selectionSortExecutionTime = algo.executionTime;
-		System.out.println("Total Execution Time of " + num.length + " numbers in Selection Sort take: " + selectionSortExecutionTime + " milli sec");
+		System.out.println("Total Execution Time of "+ num.length + " numbers in Selection Sort take: " + selectionSortExecutionTime + " milli sec");
 		connectToSqlDB.insertDataFromArrayToSqlTable(num, "selection_sort", "SortingNumbers");
 		List<String> numbers = connectToSqlDB.readDataBase("selection_sort", "SortingNumbers");
-		for (String st : numbers) {
-			printValue(numbers);
-		}
+		printValue(numbers);
 		int n = num.length;
-
-		randomize(num, n);
-
+		randomize (num, n);
 
 		//Insertion Sort
 		algo.insertionSort(num);
 		long insertionSortExecutionTime = algo.executionTime;
 		System.out.println("Total Execution Time of " + num.length + " numbers in Insertion Sort take: " + insertionSortExecutionTime + " milli sec");
-		connectToSqlDB.insertDataFromArrayToSqlTable(num, "insertion_sort", "SortingNumber");
-		List<String> numbers1 = connectToSqlDB.readDataBase("selection_sort", "SortingNumbers");
-		for (String st : numbers1) {
-			System.out.println(st);
-		}
-		randomize(num, n);
+		connectToSqlDB.insertDataFromArrayToSqlTable(num, "Insertion_sort", "SortingNumbers");
 
+		printValue(numbers);
+		randomize (num, n);
 
-		//Bubble Sort
+		//bubble Sort
 		algo.bubbleSort(num);
-		long bubbleSortExcutionTime = algo.executionTime;
-		System.out.println("Total Execution Time of" + num.length + " numbers in Bubble Sort take: " + bubbleSortExcutionTime + "milli sec");
-		connectToSqlDB.insertDataFromArrayToSqlTable(num, "insertion_sort", "SortingNumber");
-		List<String> numbers2 = connectToSqlDB.readDataBase("selection_sort", "SortingNumbers");
-		for (String st1 : numbers2) {
-			System.out.println(st1);
+		long bubbleSortExecutionTime = algo.executionTime;
+		System.out.println("Total Execution Time of " + num.length + " numbers in Bubble Sort take: " + bubbleSortExecutionTime + " milli sec");
+		connectToSqlDB.insertDataFromArrayToSqlTable(num, "Bubble_sort", "SortingNumbers");
 
-		}
-		randomize(num, n);
-
-
-		//Merge Sort
-		algo.mergeSort(num);
-		long mergeSortExcutionTime = algo.executionTime;
-		System.out.println("Total Execution Time of" + num.length + " numbers in Merge Sort take: " + mergeSortExcutionTime + "milli sec");
-		connectToSqlDB.insertDataFromArrayToSqlTable(num, "insertion_sort", "SortingNumber");
-		List<String> numbers3 = connectToSqlDB.readDataBase("selection_sort", "SortingNumbers");
-		for (String st1 : numbers3) {
-			System.out.println(st1);
-		}
-		randomize(num, n);
-
-		//Quick Sort
-
-		algo.quickSort(num);
-		long quickSortExcutionTime = algo.executionTime;
-		System.out.println("Total Execution Time of" + num.length + " numbers in Quick Sort take: " + quickSortExcutionTime + "milli sec");
-		connectToSqlDB.insertDataFromArrayToSqlTable(num, "insertion_sort", "SortingNumber");
-		List<String> numbers4 = connectToSqlDB.readDataBase("selection_sort", "SortingNumbers");
-		for (String st1 : numbers4) {
-			System.out.println(st1);
-		}
-		randomize(num, n);
-
+		printValue(numbers);
+		randomize (num, n);
 
 		//Heap Sort
 		algo.heapSort(num);
-		long heapSortExcutionTime = algo.executionTime;
-		System.out.println("Total Execution Time of" + num.length + " numbers in Heap Sort take: " + heapSortExcutionTime + "milli sec");
-		connectToSqlDB.insertDataFromArrayToSqlTable(num, "insertion_sort", "SortingNumber");
-		List<String> numbers5 = connectToSqlDB.readDataBase("selection_sort", "SortingNumbers");
-		for (String st1 : numbers5) {
-			System.out.println(st1);
-		}
-		randomize(num, n);
+		long heapSortExecutionTime = algo.executionTime;
+		System.out.println("Total Execution Time of " + num.length + " numbers in Heap Sort take: " + heapSortExecutionTime + " milli sec");
+		connectToSqlDB.insertDataFromArrayToSqlTable(num, "Heap_sort", "SortingNumbers");
 
+		printValue(numbers);
+		randomize (num, n);
 
-		//Bucket Sort
-		algo.heapSort(num);
-		long bucketSortExcutionTime = algo.executionTime;
-		System.out.println("Total Execution Time of" + num.length + " numbers in Bucket Sort take: " + bucketSortExcutionTime + "milli sec");
-		connectToSqlDB.insertDataFromArrayToSqlTable(num, "insertion_sort", "SortingNumber");
-		List<String> numbers6 = connectToSqlDB.readDataBase("selection_sort", "SortingNumbers");
-		for (String st1 : numbers6) {
-			System.out.println(st1);
-		}
-		randomize(num, n);
+		//Bucket sort
+		algo.bucketSort(num);
+		long bucketSortExecutionTime = algo.executionTime;
+		System.out.println("Total Execution Time of " + num.length + " numbers in bucket Sort take: " + bucketSortExecutionTime + " milli sec");
+		connectToSqlDB.insertDataFromArrayToSqlTable(num, "bucket_sort", "SortingNumbers");
 
+		printValue(numbers);
+		randomize (num, n);
 
-		//Shell Sort
+		//quick sort
+		algo.quickSort(num, findLow(num), findHigh(num));
+		long quickSortExecutionTime = algo.executionTime;
+		System.out.println("Total Execution Time of " + num.length + " numbers in Quick Sort take: " + quickSortExecutionTime + " milli sec");
+		connectToSqlDB.insertDataFromArrayToSqlTable(num, "quick_sort", "SortingNumbers");
+
+		printValue(numbers);
+		randomize (num, n);
+
+		//merge Sort
+		algo.MergeSort(num);
+		long mergeSortExecutionTime = algo.executionTime;
+		System.out.println("Total Execution Time of " + num.length + " numbers in merge Sort take: " + mergeSortExecutionTime + " milli sec");
+		connectToSqlDB.insertDataFromArrayToSqlTable(num, "merge_sort", "SortingNumbers");
+
+		printValue(numbers);
+		randomize (num, n);
+
+		//Shell Short
 		algo.shellSort(num);
-		long shellSortExcutionTime = algo.executionTime;
-		System.out.println("Total Execution Time of" + num.length + " numbers in Shell Sort take: " + shellSortExcutionTime + "milli sec");
-		connectToSqlDB.insertDataFromArrayToSqlTable(num, "insertion_sort", "SortingNumber");
-		List<String> numbers7 = connectToSqlDB.readDataBase("selection_sort", "SortingNumbers");
-		for (String st1 : numbers7) {
-			System.out.println(st1);
-		}
+		long shellSortExecutionTime = algo.executionTime;
+		System.out.println("Total Execution Time of " + num.length + " numbers in Shell Sort take: " + shellSortExecutionTime + " milli sec");
+		connectToSqlDB.insertDataFromArrayToSqlTable(num, "Shell_sort", "SortingNumbers");
 
+		printValue(numbers);
+		randomize (num, n);
+
+		//Come to conclusion about which Sorting Algo is better in given data set.
 
 	}
-	//By following above, Continue for rest of the Sorting Algorithm....
 
-
-	//Come to conclusion about which Sorting Algo is better in given data set.
-
-
-		public static void storeRandomNumbers ( int[] num){
-			Random rand = new Random();
-			for (int i = 0; i < num.length; i++) {
-				num[i] = rand.nextInt(1000000);
-			}
+	public static void storeRandomNumbers(int [] num){
+		Random rand = new Random();
+		for(int i=0; i<num.length; i++){
+			num[i] = rand.nextInt(1000000);
 		}
+	}
 
-		public static void randomize ( int arr[], int n) {
-			Random r = new Random();
-
-
-			// Start from the last element and swap one by one. We don't
-			// need to run for the first element that's why i > 0
-			for (int i = n-1; i > 0; i--) {
-				int j = r.nextInt(i);
-				int temp = arr[i];
-				arr[i] = arr[j];
-				arr[j] = temp;
-			}
-		}
-
-		public static int findLow(int[]array){
+	public static int findLow(int[] array){
 		int low = array[0];
-		for (int n : array){
-			if (array[n]<low){
+		for(int n: array){
+			if(array[n] < low){
 				low = array[n];
 			}
 		}
 		return low;
+	}
 
-		}
-
-	public static int findhigh(int[]array) {
+	public static int findHigh(int[] array){
 		int high = array[0];
-		for (int n : array) {
-			if (array[n] > high) {
+		for(int n: array){
+			if(array[n] > high){
 				high = array[n];
 			}
 		}
 		return high;
 	}
-		public static void printValue (List < String > array) {
-			for (String st : array) {
-				System.out.println(st);
-			}
+
+	public static void randomize( int arr[], int n)
+	{
+		Random r = new Random();
+		// Start from the last element and swap one by one. We don't
+		// need to run for the first element that's why i > 0
+		for (int i = n-1; i > 0; i--) {
+			int j = r.nextInt(i);
+			int temp = arr[i];
+			arr[i] = arr[j];
+			arr[j] = temp;
 		}
 	}
+
+	public static void printValue(List<String> array){
+		for(String st:array){
+			System.out.println(st);
+		}
+	}
+}
