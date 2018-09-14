@@ -13,28 +13,16 @@ public class MakePyramid {
          * * * * * *
 
          */
-        int n = 10;
-        printTriangle(n);
-
-    }
-
-    public static void printTriangle(int n) {
-        int k = 2 * n - 2;
-
-        for (int j = 0; i < k; j++) {
-
-            for (int j = 0; j < k; j++) {
+        for (int x = 9; x > 0; x--) {
+            int y;
+            for (y = 0; y < x; y++) {
                 System.out.println(" ");
-            }
 
-            k = k - 1;
-            for (int j = 0; j <= i; j++) {
+            }
+            for (int z = y; z < 10; z++) {
                 System.out.println("* ");
             }
-                System.out.println();
-
-            }
-
+            System.out.println(" ");
         }
-
     }
+}
