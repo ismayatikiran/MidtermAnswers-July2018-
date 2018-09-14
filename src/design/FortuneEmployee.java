@@ -1,6 +1,8 @@
-//package design;
 
-//public class FortuneEmployee {
+
+package design;
+
+public class FortuneEmployee {
 
 	/**
 	 * FortuneEmployee class has a main methods where you will be able to create Object from
@@ -29,7 +31,7 @@
 
 
 		EMP1.setPerformance(4);
-		double bonous1 = (EMP1.calculateEmployeeBonus(EMP1.getPerformane());
+		double bonous1 = (EMP1.calculateEmployeeBonus(EMP1.getPerformane()));
 
 	}
 

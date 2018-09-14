@@ -65,8 +65,8 @@ public class EmployeeInfo extends AbstractEmployee implements Employee {
 	public String setPerformance(int i) {
 		return employeeName;
 	}
-	public String getPerformane() {
-		return employeeName;
+	public int getPerformane() {
+		return performance;
 	}
 
 	public String setDepartmentName(String departmentName){
@@ -158,6 +158,16 @@ public class EmployeeInfo extends AbstractEmployee implements Employee {
 
 	public String employeeName() {
 		return null;
+	}
+
+	@Override
+	public void assignDepartment() {
+
+	}
+
+	@Override
+	public int calculateSalary() {
+		return 0;
 	}
 
 

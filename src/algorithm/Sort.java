@@ -133,7 +133,7 @@ public class Sort {
         //implement here
         if(low < high){
             int next = partition(array, low, high);
-            quickSort(array, low, next-1);
+           // quickSort(array, low, next-1);
             quickSort(array, next+1, high);
         }
         final long endTime = System.currentTimeMillis();
